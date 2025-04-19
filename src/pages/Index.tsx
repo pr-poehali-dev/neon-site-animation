@@ -1,9 +1,13 @@
 import NeonTitle from "@/components/NeonTitle";
 import NeonCard from "@/components/NeonCard";
 import NeonButton from "@/components/NeonButton";
-import { Sparkles, Zap, Stars } from "lucide-react";
+import { Sparkles, Zap, Stars, MessageSquare } from "lucide-react";
 
 const Index = () => {
+  const handleContactClick = () => {
+    window.open("https://t.me/vocoders", "_blank");
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background neon-gradient-bg p-4">
       <div className="max-w-4xl w-full text-center space-y-12 py-12">
@@ -49,6 +53,26 @@ const Index = () => {
             </p>
           </NeonCard>
         </div>
+
+        {/* Контактная информация */}
+        <NeonCard color="blue" className="max-w-md mx-auto">
+          <MessageSquare className="w-8 h-8 text-neon-blue mx-auto mb-4" />
+          <NeonTitle color="blue" size="sm">
+            Связаться с нами
+          </NeonTitle>
+          <p className="mt-4 text-gray-300">
+            У вас есть вопросы или предложения? Напишите нам в Телеграм!
+          </p>
+          <div className="mt-6">
+            <NeonButton 
+              color="blue" 
+              variant="filled" 
+              onClick={handleContactClick}
+            >
+              Телеграм: @vocoders
+            </NeonButton>
+          </div>
+        </NeonCard>
 
         {/* Кнопки */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
